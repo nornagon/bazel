@@ -81,10 +81,7 @@ Wrote:
 ```
 
 The `WORKSPACE` file will contain the transitive dependencies of the given
-projects and artifacts. The `BUILD` file will contain a single target,
-`transitive-deps`, that contains all of the dependencies. You can copy these
-files to your project and add `transitive-deps` as a dependency of your `java_`
-targets in `BUILD` files.
+projects and artifacts.
 
 If you specify multiple Bazel projects, Maven projects, or artifacts, they will
 all be combined into one `WORKSPACE` file (e.g., if the Bazel project depends on
@@ -114,10 +111,6 @@ This indicates that `org.springframework:spring:2.5.6`, `javax.mail:mail:1.4`,
 `org.slf4j:nlog4j:1.2.24` all depend on javax.activation. However, two of these
 libraries wanted version 1.1 and three of them wanted 1.0.2. The `WORKSPACE`
 file is using version 1.1, but that might not be the right version to use.
-
-You may also want to break `transitive-deps` into smaller targets, as it is
-unlikely that all of your targets depend on the transitive closure of your
-maven jars.
 
 # Types of external dependencies
 
